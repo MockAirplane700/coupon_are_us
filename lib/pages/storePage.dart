@@ -1,17 +1,18 @@
 import 'package:coupon_are_us/customObjects/constants.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class ViewStore extends StatefulWidget {
-  final  name;
-  final  networkImage;
-  final  storeDescription;
-  final  twitter;
-  final  facebook;
-  final  instagram;
-  final website;
-  final contactNumber;
+  final String name;
+  final  String networkImage;
+  final  String storeDescription;
+  final  String twitter;
+  final  String facebook;
+  final  String instagram;
+  final String website;
+  final String contactNumber;
 
-  const ViewStore({Key? key, this.website,this.contactNumber,this.networkImage, this.name, this.twitter,this.instagram,this.facebook, this.storeDescription}) : super(key: key);
+  const ViewStore({Key? key, required this.website,required this.contactNumber,required this.networkImage, required this.name, required this.twitter,required this.instagram,required this.facebook, required this.storeDescription}) : super(key: key);
 
   @override
   State<ViewStore> createState() => _ViewStoreState();
@@ -47,15 +48,52 @@ class _ViewStoreState extends State<ViewStore> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
+                  //twitter
                   IconButton(
                       onPressed: () {
                         //TODO: use URL launcher to go to the relevant link
                       },
-                      icon: const Icon(Icons.facebook)
-                  )
+                      icon: const FaIcon(FontAwesomeIcons.twitter)
+                  ),
+                  //facebook
+                  IconButton(
+                      onPressed: () {
+                        //TODO: use URL launcher to go to the relevant link
+                      },
+                      icon: const FaIcon(FontAwesomeIcons.facebook)
+                  ),
+                  //instagram
+                  IconButton(
+                      onPressed: () {
+                        //TODO: use URL launcher to go to the relevant link
+                      },
+                      icon: const FaIcon(FontAwesomeIcons.instagram)
+                  ),
                 ],
-              ))
+              )),
               // a row showing the option of the contact number as well as the website
+              SizedBox(height: MediaQuery.of(context).size.height/80,),
+              Flexible(child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  //call the business
+                  IconButton(
+                      onPressed: () {
+                        //TODO: use URL launcher to go to the relevant link
+                      },
+                      icon: const FaIcon(FontAwesomeIcons.phone)
+                  ),
+                  //website
+                  IconButton(
+                      onPressed: () {
+                        //TODO: use URL launcher to go to the relevant link
+                      },
+                      icon: const FaIcon(FontAwesomeIcons.globe)
+                  ),
+                  //instagram
+                ],
+              )),
 
             ],
           ),

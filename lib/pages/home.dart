@@ -1,6 +1,7 @@
 import 'package:coupon_are_us/customObjects/constants.dart';
 import 'package:coupon_are_us/customObjects/couponObject.dart';
 import 'package:coupon_are_us/logic/coupons.dart';
+import 'package:coupon_are_us/pages/storePage.dart';
 import 'package:coupon_are_us/pages/viewCoupon.dart';
 import 'package:flutter/material.dart';
 
@@ -62,7 +63,7 @@ class _HomeState extends State<Home> {
                               ],
                             ),
                             onPressed: () {
-                              //todo: go to a page to only view the one coupon to be scanned and send data to screen
+                              //go to a page to only view the one coupon to be scanned and send data to screen
                               Navigator.push(context,
                                 MaterialPageRoute(builder: (context)=> ViewCoupon(networkImage: _list[index].networkImage,))
                               );
@@ -79,7 +80,19 @@ class _HomeState extends State<Home> {
                               ],
                             ),
                             onPressed: () {
-                              //todo: go to a page to view the store the coupon belongs to, send data to screen
+                              //go to a page to view the store the coupon belongs to, send data to screen
+                              Navigator.push(context,
+                              MaterialPageRoute(builder: (context)=> ViewStore(
+                                website: _list[index].store.website,
+                                name: _list[index].store.name,
+                                storeDescription: _list[index].store.description,
+                                instagram: _list[index].store.instagram,
+                                twitter: _list[index].store.twitter,
+                                facebook: _list[index].store.facebook,
+                                contactNumber: _list[index].store.contactNumber,
+                                networkImage: _list[index].store.networkImage,
+                              ))
+                              );
                             },
                               style: ElevatedButton.styleFrom(
                                 primary: buttonColor,

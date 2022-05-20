@@ -2,9 +2,9 @@ import 'package:coupon_are_us/customObjects/constants.dart';
 import 'package:flutter/material.dart';
 
 class ViewCoupon extends StatefulWidget {
- final  networkImage;
+ final String networkImage;
 
-  const ViewCoupon({Key? key, this.networkImage}) : super(key: key);
+  const ViewCoupon({Key? key, required this.networkImage}) : super(key: key);
 
   @override
   State<ViewCoupon> createState() => _ViewCouponState();
