@@ -1,4 +1,5 @@
 import 'package:coupon_are_us/customObjects/constants.dart';
+import 'package:coupon_are_us/widgets/searchDelegate.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -25,6 +26,14 @@ class _ViewStoreState extends State<ViewStore> {
       appBar: AppBar(
         backgroundColor: primaryAppBarColor,
         title: const Text('Store Front'),
+        actions: [
+          IconButton(
+              onPressed: () {
+                showSearch(context: context, delegate: MySearchDelegate());
+              },
+              icon: const Icon(Icons.search)
+          )
+        ],
       ),
       backgroundColor: backgroundApplicationColor,
       body: Center(

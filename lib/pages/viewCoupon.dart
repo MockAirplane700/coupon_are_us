@@ -1,4 +1,5 @@
 import 'package:coupon_are_us/customObjects/constants.dart';
+import 'package:coupon_are_us/widgets/searchDelegate.dart';
 import 'package:flutter/material.dart';
 
 class ViewCoupon extends StatefulWidget {
@@ -17,6 +18,14 @@ class _ViewCouponState extends State<ViewCoupon> {
       appBar: AppBar(
         title: const Text('Coupon View'),
         backgroundColor: primaryAppBarColor,
+        actions: [
+          IconButton(
+              onPressed: () {
+                showSearch(context: context, delegate: MySearchDelegate());
+              },
+              icon: const Icon(Icons.search)
+          )
+        ],
       ),
       backgroundColor: backgroundApplicationColor,
       body: Center(

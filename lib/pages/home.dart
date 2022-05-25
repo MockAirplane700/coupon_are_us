@@ -3,6 +3,7 @@ import 'package:coupon_are_us/customObjects/couponObject.dart';
 import 'package:coupon_are_us/logic/coupons.dart';
 import 'package:coupon_are_us/pages/storePage.dart';
 import 'package:coupon_are_us/pages/viewCoupon.dart';
+import 'package:coupon_are_us/widgets/searchDelegate.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatefulWidget {
@@ -21,6 +22,14 @@ class _HomeState extends State<Home> {
       appBar: AppBar(
         title: const Text('Coupons in the area'),
         backgroundColor: primaryAppBarColor,
+        actions: [
+          IconButton(
+              onPressed: () {
+                showSearch(context: context, delegate: MySearchDelegate());
+              },
+              icon: const Icon(Icons.search)
+          )
+        ],
       ),
       backgroundColor: backgroundApplicationColor,
       body: Center(
