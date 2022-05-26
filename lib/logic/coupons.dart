@@ -20,7 +20,7 @@ class ListingOfCoupons {
             networkImage: 'https://cdn.shopify.com/s/files/1/2495/8384/files/3CC28EBD-4D93-4471-895F-3ED909D7A1D1_2000x.jpg?v=1647221748',
             twitter:'https://twitter.com/OutOfTheBlueWpg',
             website: 'https://outoftheblue.ca/',
-            contactNumber: '(204) 477–6489'
+            contactNumber: '+1-204-477–6489'
         )
     ),
     CouponsObject(
@@ -36,7 +36,7 @@ class ListingOfCoupons {
             networkImage: 'https://cdn.shopify.com/s/files/1/2495/8384/files/3CC28EBD-4D93-4471-895F-3ED909D7A1D1_2000x.jpg?v=1647221748',
             twitter:'https://twitter.com/OutOfTheBlueWpg',
             website: 'https://outoftheblue.ca/',
-            contactNumber: '(204) 477–6489'
+            contactNumber: '+1-204-477–6489'
         )
     ),
     CouponsObject(
@@ -52,7 +52,7 @@ class ListingOfCoupons {
             networkImage: 'https://cdn.shopify.com/s/files/1/2495/8384/files/3CC28EBD-4D93-4471-895F-3ED909D7A1D1_2000x.jpg?v=1647221748',
             twitter:'https://twitter.com/OutOfTheBlueWpg',
             website: 'https://outoftheblue.ca/',
-            contactNumber: '(204) 477–6489'
+            contactNumber: '+1-204-477–6489'
         )
     ),
     CouponsObject(
@@ -68,7 +68,7 @@ class ListingOfCoupons {
             networkImage: 'https://cdn.shopify.com/s/files/1/2495/8384/files/3CC28EBD-4D93-4471-895F-3ED909D7A1D1_2000x.jpg?v=1647221748',
             twitter:'https://twitter.com/OutOfTheBlueWpg',
             website: 'https://outoftheblue.ca/',
-            contactNumber: '(204) 477–6489'
+            contactNumber: '+1-204-477–6489'
         )
     ),
     CouponsObject(
@@ -84,7 +84,7 @@ class ListingOfCoupons {
             networkImage: 'https://cdn.shopify.com/s/files/1/2495/8384/files/3CC28EBD-4D93-4471-895F-3ED909D7A1D1_2000x.jpg?v=1647221748',
             twitter:'https://twitter.com/OutOfTheBlueWpg',
             website: 'https://outoftheblue.ca/',
-            contactNumber: '(204) 477–6489'
+            contactNumber: '+1-204-477–6489'
         )
     ),
     CouponsObject(
@@ -100,7 +100,7 @@ class ListingOfCoupons {
             networkImage: 'https://cdn.shopify.com/s/files/1/2495/8384/files/3CC28EBD-4D93-4471-895F-3ED909D7A1D1_2000x.jpg?v=1647221748',
             twitter:'https://twitter.com/OutOfTheBlueWpg',
             website: 'https://outoftheblue.ca/',
-            contactNumber: '(204) 477–6489'
+            contactNumber: '+1-204-477–6489'
         )
     ),
     CouponsObject(
@@ -116,7 +116,7 @@ class ListingOfCoupons {
             networkImage: 'https://cdn.shopify.com/s/files/1/2495/8384/files/3CC28EBD-4D93-4471-895F-3ED909D7A1D1_2000x.jpg?v=1647221748',
             twitter:'https://twitter.com/OutOfTheBlueWpg',
             website: 'https://outoftheblue.ca/',
-            contactNumber: '(204) 477–6489'
+            contactNumber: '+1-204-477–6489'
         )
     ),
     CouponsObject(
@@ -132,7 +132,7 @@ class ListingOfCoupons {
             networkImage: 'https://cdn.shopify.com/s/files/1/2495/8384/files/3CC28EBD-4D93-4471-895F-3ED909D7A1D1_2000x.jpg?v=1647221748',
             twitter:'https://twitter.com/OutOfTheBlueWpg',
             website: 'https://outoftheblue.ca/',
-            contactNumber: '(204) 477–6489'
+            contactNumber: '+1-204-477–6489'
         )
     ),
     CouponsObject(
@@ -148,7 +148,7 @@ class ListingOfCoupons {
             networkImage: 'https://cdn.shopify.com/s/files/1/2495/8384/files/3CC28EBD-4D93-4471-895F-3ED909D7A1D1_2000x.jpg?v=1647221748',
             twitter:'https://twitter.com/OutOfTheBlueWpg',
             website: 'https://outoftheblue.ca/',
-            contactNumber: '(204) 477–6489'
+            contactNumber: '+1-204-477–6489'
         )
     ),
     CouponsObject(
@@ -164,7 +164,7 @@ class ListingOfCoupons {
             networkImage: 'https://cdn.shopify.com/s/files/1/2495/8384/files/3CC28EBD-4D93-4471-895F-3ED909D7A1D1_2000x.jpg?v=1647221748',
             twitter:'https://twitter.com/OutOfTheBlueWpg',
             website: 'https://outoftheblue.ca/',
-            contactNumber: '(204) 477–6489'
+            contactNumber: '+1-204-477–6489'
         )
     ),
   ];

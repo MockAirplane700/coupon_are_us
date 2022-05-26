@@ -2,6 +2,7 @@ import 'package:coupon_are_us/customObjects/constants.dart';
 import 'package:coupon_are_us/widgets/searchDelegate.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class ViewStore extends StatefulWidget {
   final String name;
@@ -20,8 +21,26 @@ class ViewStore extends StatefulWidget {
 }
 
 class _ViewStoreState extends State<ViewStore> {
+
+  Future<void> _launchInBrowser(Uri url) async {
+    if (!await launchUrl(url,mode: LaunchMode.externalApplication)){
+      throw 'Could not launch $url';
+    }
+  }
+
+  Future<void> makePhoneCall(String phone) async {
+    final Uri launchUri = Uri(scheme: 'tel', path: phone);
+    await launchUrl(launchUri);
+  }
+
   @override
   Widget build(BuildContext context) {
+
+    String website = widget.website;
+    String twitter = widget.twitter;
+    String instagram = widget.instagram;
+    String facebook = widget.facebook;
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: primaryAppBarColor,
@@ -60,21 +79,26 @@ class _ViewStoreState extends State<ViewStore> {
                   //twitter
                   IconButton(
                       onPressed: () {
-                        //TODO: use URL launcher to go to the relevant link
+                        //use URL launcher to go to the relevant link
+                        _launchInBrowser(Uri.parse(twitter));
                       },
                       icon: const FaIcon(FontAwesomeIcons.twitter)
                   ),
                   //facebook
                   IconButton(
                       onPressed: () {
-                        //TODO: use URL launcher to go to the relevant link
+                        // use URL launcher to go to the relevant link
+                        _launchInBrowser(Uri.parse(facebook));
+
                       },
                       icon: const FaIcon(FontAwesomeIcons.facebook)
                   ),
                   //instagram
                   IconButton(
                       onPressed: () {
-                        //TODO: use URL launcher to go to the relevant link
+                        //use URL launcher to go to the relevant link
+                        _launchInBrowser(Uri.parse(instagram));
+
                       },
                       icon: const FaIcon(FontAwesomeIcons.instagram)
                   ),
@@ -89,14 +113,17 @@ class _ViewStoreState extends State<ViewStore> {
                   //call the business
                   IconButton(
                       onPressed: () {
-                        //TODO: use URL launcher to go to the relevant link
+                        //use URL launcher to go to the relevant link
+                        makePhoneCall(widget.contactNumber);
                       },
                       icon: const FaIcon(FontAwesomeIcons.phone)
                   ),
                   //website
                   IconButton(
                       onPressed: () {
-                        //TODO: use URL launcher to go to the relevant link
+                        //use URL launcher to go to the relevant link
+                        _launchInBrowser(Uri.parse(website));
+
                       },
                       icon: const FaIcon(FontAwesomeIcons.globe)
                   ),
