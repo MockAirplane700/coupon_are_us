@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "436956870497",
+    "project_id": "coupons-are-us",
+    "storage_bucket": "coupons-are-us.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:436956870497:android:6dc887d8520cc9fd6af720",
+        "android_client_info": {
+          "package_name": "com.example.coupon_are_us"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "436956870497-upl5mjhu40qkggrh96rj1u2o9mkem2fg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAjMrsuKaa8zF-NLK5ZnHFF6Qr4PhOgzso"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "436956870497-upl5mjhu40qkggrh96rj1u2o9mkem2fg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

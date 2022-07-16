@@ -1,7 +1,9 @@
 // this holds the list all coupons found in the application
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:coupon_are_us/customObjects/couponObject.dart';
 import 'package:coupon_are_us/customObjects/store.dart';
+import 'package:flutter/foundation.dart';
 import 'package:tuple/tuple.dart';
 
 class ListingOfCoupons {
@@ -170,8 +172,32 @@ class ListingOfCoupons {
   ];
 
 
+  // todo: use a sqlite database, local
  static List<CouponsObject> listOfCoupons() {
     return _list;
   }//end of method
 
+ //TODO: READ DATA
+
+  static void getCouponData() async{
+   List<String> results = [];
+   //TODO: Create this instance once when the application runs for the first time
+   //create an instance in the database
+   FirebaseFirestore databaseInstance = FirebaseFirestore.instance;
+   //read the test data
+   await databaseInstance.collection("test").get().then((value) {
+     for (var doc in value.docs) {
+       if (kDebugMode) {
+         print("${doc.id}=> ${doc.data()}");
+       }
+     }
+   });
+   // return results;
+  }
+
+
+}
+
+void main() {
+  ListingOfCoupons.getCouponData();
 }
