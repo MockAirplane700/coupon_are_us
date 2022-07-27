@@ -172,7 +172,7 @@ class ListingOfCoupons {
   //   ),
   // ];
 
-  static final List<CouponsObject> _listing = [];
+  static List<CouponsObject> _listing = [];
 
   static List<CouponsObject> fetchData() {return _listing;}
  //  // todo: use a sqlite database, local
@@ -181,6 +181,10 @@ class ListingOfCoupons {
  //  }//end of method
 
  //TODO: READ DATA
+
+  static void setData(List<CouponsObject> list) {
+    _listing = list;
+  }
 
   static Future<List<CouponsObject>> getCouponData() async{
    List<CouponsObject> results = [];
@@ -206,11 +210,10 @@ class ListingOfCoupons {
        );
        results.add(coupon);
        _listing.add(coupon);
-
      }
    });
 
-   return results;
+   return results as Future<List<CouponsObject>>;
   }
 
 
