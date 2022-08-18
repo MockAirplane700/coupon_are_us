@@ -172,7 +172,9 @@ class ListingOfCoupons {
   //   ),
   // ];
 
-  static List<CouponsObject> _listing = [];
+  static List<CouponsObject> _listing = [
+
+  ];
 
   static List<CouponsObject> fetchData() {return _listing;}
  //  // todo: use a sqlite database, local
