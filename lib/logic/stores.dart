@@ -79,8 +79,8 @@ class StoreListing {
         description: 'lorem ipsum',
         facebook: 'https://www.facebook.com/OutOfTheBlueWpg',
         instagram: 'https://twitter.com/OutOfTheBlueWpg',
-        location: 'https://www.instagram.com/outoftheblu/',
-        name: 'Out of the Blue',
+        location: '33004-1485 Portage Ave #131G, Winnipeg, MB R3G 0W4',
+        name: 'Ardene',
         networkImage: 'https://cdn.shopify.com/s/files/1/2495/8384/files/3CC28EBD-4D93-4471-895F-3ED909D7A1D1_2000x.jpg?v=1647221748',
         twitter:'https://twitter.com/OutOfTheBlueWpg',
         website: 'https://outoftheblue.ca/',
@@ -88,15 +88,15 @@ class StoreListing {
     ),
     //Lavish
     Store(
-        description: 'lorem ipsum',
-        facebook: 'https://www.facebook.com/OutOfTheBlueWpg',
-        instagram: 'https://twitter.com/OutOfTheBlueWpg',
-        location: 'https://www.instagram.com/outoftheblu/',
-        name: 'Out of the Blue',
-        networkImage: 'https://cdn.shopify.com/s/files/1/2495/8384/files/3CC28EBD-4D93-4471-895F-3ED909D7A1D1_2000x.jpg?v=1647221748',
+        description: 'The new Lavish store in CF Polo Park has gone from grey and moody to light and….well, lavish!Pinnacle was happy to help this storeowner with this transformation, as we know how finicky painting can be when going from dark shades to a lighter colour.⁠Trust Pinnacle painters to get your commercial jobs done on-time and on budget! Book a free consultation with us today by calling the number at the top of our site.',
+        facebook: 'https://www.facebook.com/Lavishca-105606728836248',
+        instagram: 'https://www.instagram.com/lavish.canada',
+        location: '1485 Portage Ave, Winnipeg, MB R3G 0W4',
+        name: 'Lavish',
+        networkImage: 'https://cdn.shopify.com/s/files/1/0281/7438/5238/files/IMG_1594_2_1024x1024.jpg?v=1655100673',
         twitter:'https://twitter.com/OutOfTheBlueWpg',
-        website: 'https://outoftheblue.ca/',
-        contactNumber: '+1-204-477–6489', storeId: 0
+        website: 'https://lavish.ca',
+        contactNumber: '+1-204-306–2560', storeId: 1
     ),
     //Below the belt
     Store(
