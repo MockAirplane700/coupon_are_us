@@ -10,4 +10,11 @@ class CouponsObject {
 
 
   CouponsObject({required this.networkImage, required this.name, required this.coordinates, required this.store});
-}
+
+  ///-----------------------------------------------------------------
+///
+///
+///               Coupon json structure
+///
+/// --------------------------------------------------------------------
+}//end coupons object

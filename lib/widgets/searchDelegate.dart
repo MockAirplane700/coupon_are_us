@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 
 class MySearchDelegate extends SearchDelegate{
   int indexValue = 0;
-  final List<CouponsObject> _list =ListingOfCoupons.fetchData();
+  final List<CouponsObject> _list =ListingOfCoupons.getCouponsIterationTwo() as List<CouponsObject>;
 
   @override
   List<Widget>? buildActions(BuildContext context) => [
@@ -32,7 +32,7 @@ class MySearchDelegate extends SearchDelegate{
     subtitle: Text('Store: ' + _list[indexValue].store.name),
     onTap: () {
       //go the view coupon page
-      Navigator.push(context, MaterialPageRoute(builder: (context)=> ViewCoupon(networkImage: _list[indexValue].networkImage)));
+      Navigator.push(context, MaterialPageRoute(builder: (context)=> ViewCoupon(couponsObject: _list[indexValue])));
     },
   );
 
