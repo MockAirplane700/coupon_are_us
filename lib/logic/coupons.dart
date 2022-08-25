@@ -1,12 +1,8 @@
 // this holds the list all coupons found in the application
 
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:coupon_are_us/customObjects/couponObject.dart';
 import 'package:coupon_are_us/customObjects/store.dart';
 import 'package:coupon_are_us/persistence/mongo_database.dart';
-import 'package:firebase_core/firebase_core.dart';
-import 'package:flutter/foundation.dart';
-import 'package:tuple/tuple.dart';
 
 class ListingOfCoupons {
 

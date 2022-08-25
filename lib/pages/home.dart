@@ -1,15 +1,12 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:coupon_are_us/customObjects/constants.dart';
 import 'package:coupon_are_us/customObjects/couponObject.dart';
 import 'package:coupon_are_us/customObjects/store.dart';
-import 'package:coupon_are_us/firebase_options.dart';
 import 'package:coupon_are_us/logic/coupons.dart';
 import 'package:coupon_are_us/logic/stores.dart';
 import 'package:coupon_are_us/pages/storePage.dart';
 import 'package:coupon_are_us/pages/viewCoupon.dart';
 import 'package:coupon_are_us/widgets/custom_drawer.dart';
 import 'package:coupon_are_us/widgets/searchDelegate.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:google_fonts/google_fonts.dart';

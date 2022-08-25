@@ -37,8 +37,6 @@ dependencies:
   tuple: ^2.0.0
   font_awesome_flutter: ^10.1.0
   url_launcher: ^6.1.2
-  cloud_firestore: ^3.2.1
-  firebase_core: ^1.19.2
   syncfusion_flutter_barcodes: ^20.2.45
   path: ^1.8.1
   sqflite: ^2.0.3+1
