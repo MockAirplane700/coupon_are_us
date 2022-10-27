@@ -18,11 +18,16 @@ class Store {
 
   Store fromJson(json) {
     return Store(
-        storeId: json['storeId'], description: json['description'],
-        facebook: json['facebook'], instagram: json['instagram'],
-        location: json['location'], name:json['name'] , networkImage: json['networkImage'],
-        twitter: json['twitter'], contactNumber: json['contactNumber'],
-        website: json['website']
+        storeId: int.parse(json['storeId']) ,
+        name:json['name'] ,
+        location: json['location'],
+        networkImage: json['networkImage'],
+        description: json['description'],
+        facebook: json['facebook'],
+        twitter: json['twitter'],
+        instagram: json['instagram'],
+        website: json['website'] ,
+        contactNumber: json['contactNumber']
     );
   }//end from json
 

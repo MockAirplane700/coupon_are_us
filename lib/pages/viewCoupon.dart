@@ -17,6 +17,10 @@ class ViewCoupon extends StatefulWidget {
 
 class _ViewCouponState extends State<ViewCoupon> {
 
+  late double width;
+  late double height;
+  String barcodeValue = 'https://www.sizibamthandazo.dev';
+
   // void buildBarcode(Barcode barcode, String data, {String? filename, double? width, double? height, double? fontHeight}) {
   //   //create the barcode
   //   final svg = barcode.toSvg(data, width: width ?? 200, height: height ?? 80, fontHeight: fontHeight);
@@ -26,6 +30,9 @@ class _ViewCouponState extends State<ViewCoupon> {
   // }//end build barcode
   @override
   Widget build(BuildContext context) {
+    width = MediaQuery.of(context).size.width;
+    height = MediaQuery.of(context).size.height;
+    barcodeValue = widget.couponsObject.store.website;
     return Scaffold(
       appBar: AppBar(
         title: const Text('Coupon View'),
@@ -46,23 +53,39 @@ class _ViewCouponState extends State<ViewCoupon> {
             padding:const EdgeInsets.all(10.0),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisSize: MainAxisSize.min,
+              
               children: [
                 Image.network(widget.couponsObject.networkImage),
                 Padding(padding: EdgeInsets.zero, child: Row(
                   children: [
-                    Text('Store name: ${widget.couponsObject.store.name}'),
+                    Padding(
+                      padding:EdgeInsets.all(width/300),
+                      child: Text('Store name: ${widget.couponsObject.store.name}',  style: const TextStyle(fontSize: 18),),
+                    ),
                   ],
                 ),),
                 Padding(padding: EdgeInsets.zero, child: Row(
                   children: [
-                    Text('Store location: ${widget.couponsObject.store.location}'),
+                    Expanded(
+                      child: Padding(
+                        padding:  EdgeInsets.all(width/300),
+                        child: Text('Store location: ${widget.couponsObject.store.location}' , style: const TextStyle(fontSize: 18),),
+                      ),
+                    ),
                   ],
                 ),),
-                Padding(padding: EdgeInsets.zero, child: Row(
-                  children: [
-                    Text('Coupon name: ${widget.couponsObject.name}'),
-                  ],
-                ),),
+                Flexible(
+                  flex: 1,
+                  child: SizedBox(
+                    width: width,
+                    child: Row(
+                      children: [
+                        Expanded(child: Text('Coupon name: ${widget.couponsObject.name}' , style: const TextStyle(fontSize: 18),)),
+                      ],
+                    ),
+                  ),
+                ),
                 const Divider(),
                 Padding(padding: EdgeInsets.all(MediaQuery.of(context).size.width/100), child: Card(
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(MediaQuery.of(context).size.width/30)),
@@ -72,7 +95,9 @@ class _ViewCouponState extends State<ViewCoupon> {
                     child: SizedBox(
                       height: MediaQuery.of(context).size.height/8,
                       child: SfBarcodeGenerator(
-                          value: widget.couponsObject.store.website,
+                        value: barcodeValue.isNotEmpty ? barcodeValue :'https://www.sizibamthandazo.dev' ,
+                        showValue: false,
+                        symbology: Code39Extended(module: 2),
                       ),
                     ),),
                 ),),

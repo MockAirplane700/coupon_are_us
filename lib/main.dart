@@ -1,8 +1,11 @@
 import 'package:coupon_are_us/pages/home.dart';
+import 'package:coupon_are_us/persistence/mongo_database.dart';
 import 'package:flutter/material.dart';
 
-void main() {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await MongoDatabase.connect();
+  await MongoDatabase.connectStores();
   runApp(const MyApp());
 }
 

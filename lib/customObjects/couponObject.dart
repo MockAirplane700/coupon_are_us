@@ -1,4 +1,6 @@
 
+import 'dart:convert';
+
 import 'package:coupon_are_us/customObjects/store.dart';
 import 'package:tuple/tuple.dart';
 
@@ -17,4 +19,34 @@ class CouponsObject {
 ///               Coupon json structure
 ///
 /// --------------------------------------------------------------------
+  CouponsObject fromJson(json) {
+    Store store = Store(
+        storeId: 0, description: '',
+        facebook: '', instagram: '', location: '', 
+        name: name, networkImage: networkImage, twitter: '', 
+        contactNumber: '', website: '');
+    return CouponsObject( name: json['name'],networkImage: json['networkImage'], store: getObject(json['store']), coordinates: json['coordinates']);
+
+  }//end from json
+
+  Store getObject(String string) {
+    // string processing to json
+
+    Map<String,dynamic> map = jsonDecode(string);
+    return Store(
+        storeId: map['storeId'], description: map['description'], 
+        facebook: map['facebook'], instagram: map['instagram'], location: map['location'], 
+        name: map['name'], networkImage: map['networkImage'], twitter: map['twitter'], 
+        contactNumber: map['contactNumber'], website: map['website']);
+  }//end get object
+
+  Map<String,dynamic> toJson() {
+    return {
+      'name':name,
+      'networkImage': networkImage,
+      'store':store,
+      'coordinates':coordinates
+    };
+  }
+
 }//end coupons object
