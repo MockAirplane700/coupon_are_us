@@ -1,5 +1,6 @@
 // todo: create a search delegate to search for coupons and stores
 
+import 'package:coupon_are_us/customObjects/constants.dart';
 import 'package:coupon_are_us/customObjects/couponObject.dart';
 import 'package:coupon_are_us/logic/coupons.dart';
 import 'package:coupon_are_us/pages/viewCoupon.dart';
@@ -32,7 +33,7 @@ class MySearchDelegate extends SearchDelegate{
     subtitle: Text('Store: ' + _list[indexValue].store.name),
     onTap: () {
       //go the view coupon page
-      Navigator.push(context, MaterialPageRoute(builder: (context)=> ViewCoupon(couponsObject: _list[indexValue])));
+      Navigator.push(context, MaterialPageRoute(builder: (context)=> ViewCoupon(couponsObject:_list[indexValue])));
     },
   );
 

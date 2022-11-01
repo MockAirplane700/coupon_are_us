@@ -1,3 +1,5 @@
+import 'package:coupon_are_us/customObjects/couponObject.dart';
+import 'package:coupon_are_us/customObjects/store.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -50,6 +52,28 @@ const Color dialogBoxBackgroundColor = Colors.orange;
 // Circle avatar background color
 const Color circleAvatarBackgroundColor = Colors.deepOrangeAccent;
 
+///*****************************************************************************
+///
+/// SEARCH DATA
+///
+/// ****************************************************************************
+///
+
+List<Store> storesSearchData = [];
+
+void addSearchData(List<Store> data) {
+  for (var value in data) {
+    storesSearchData.add(value);
+  }//end for loop
+}//end method
+
+List<CouponsObject> couponsSearchData = [];
+
+void addCouponsSearchData(List<CouponsObject> data) {
+  for (var value in data) {
+    couponsSearchData.add(value);
+  }//end for loop
+}//end method
 
 ///*****************************************************************************
 ///

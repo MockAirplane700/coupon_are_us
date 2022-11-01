@@ -1,13 +1,102 @@
+import 'package:coupon_are_us/customObjects/constants.dart';
+import 'package:coupon_are_us/customObjects/couponObject.dart';
+import 'package:coupon_are_us/customObjects/store.dart';
+import 'package:coupon_are_us/logic/coupons.dart';
+import 'package:coupon_are_us/logic/stores.dart';
 import 'package:coupon_are_us/pages/home.dart';
 import 'package:coupon_are_us/persistence/mongo_database.dart';
 import 'package:flutter/material.dart';
+import 'package:path/path.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await MongoDatabase.connect();
   await MongoDatabase.connectStores();
+
+  //todo: set the search data appropriately
+  // addSearchData(storesSearchFunction());
+  // addCouponsSearchData(couponsSearchFunction());
+
   runApp(const MyApp());
 }
+
+List<Store> storesSearchFunction() {
+  List<Store> stores = [];
+  List _stores = StoreListing.getStores() as List<Map<String,dynamic>>;
+  for (var value in _stores) {
+            Store store = Store(
+                storeId: 0, description: '',
+                facebook: '', instagram: '',
+                location: '', name: '', networkImage: '',
+                twitter: '', contactNumber: '',
+                website: '');
+            Store _store = store.fromJson(value);
+            // add the store object to the list
+            stores.add(_store);
+  }//end for loop
+ // FutureBuilder(
+  //     builder: (context, snapshot) {
+  //       if (snapshot.hasData) {
+  //         //obtain data and present it into a list.
+  //         List _stores = snapshot.data as List<Map<String,dynamic>>;
+  //         // loop through the stores and add each one to the list
+  //         for (var value in _stores) {
+  //           Store store = Store(
+  //               storeId: 0, description: '',
+  //               facebook: '', instagram: '',
+  //               location: '', name: '', networkImage: '',
+  //               twitter: '', contactNumber: '',
+  //               website: '');
+  //           Store _store = store.fromJson(value);
+  //           // add the store object to the list
+  //           stores.add(_store);
+  //         }//end for loop
+  //         // a widget must be returned
+  //         return Container();
+  //       }else{
+  //         //no data present, provide default data
+  //         //a widget must be returned
+  //         return Container();
+  //       }
+  //     },
+  //   future: StoreListing.getStores(),
+  // );
+  return stores;
+}
+
+List<CouponsObject> couponsSearchFunction() {
+  List<CouponsObject> coupons = [];
+  FutureBuilder(
+    builder: (context, snapshot) {
+      if (snapshot.hasData) {
+        //obtain data and present it into a list.
+        List _coupons = snapshot.data as List<Map<String,dynamic>>;
+        // loop through the coupons and add each one to the list
+        for (var value in _coupons) {
+          CouponsObject coupon = CouponsObject(
+              networkImage: '', name: '', coordinates: '',
+              store: Store(
+                  storeId: 0, description: '',
+                  facebook: '', instagram: '',
+                  location: '', name: '', networkImage: '',
+                  twitter: '', contactNumber: '',
+                  website: ''));
+          CouponsObject _coupon = coupon.fromJson(value);
+          // add the coupon object to the list
+          coupons.add(_coupon);
+        }//end for loop
+        // a widget must be returned
+        return Container();
+      }else{
+        //no data present, provide default data
+        //a widget must be returned
+        return Container();
+      }
+    },
+    future: ListingOfCoupons.getCoupons(),
+  );
+  return coupons;
+}//end method
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
