@@ -8,7 +8,7 @@ import 'package:flutter/material.dart';
 
 class MySearchDelegate extends SearchDelegate{
   int indexValue = 0;
-  final List<CouponsObject> _list =ListingOfCoupons.getCouponsIterationTwo() as List<CouponsObject>;
+  final List<CouponsObject> _list =ListingOfCoupons.getCouponsIterationTwo();
 
   @override
   List<Widget>? buildActions(BuildContext context) => [
