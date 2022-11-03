@@ -64,22 +64,23 @@ class _FavouriteStoresState extends State<FavouriteStores> {
                       backgroundColor: backgroundApplicationColor,
                       child:  Icon(Icons.person, size: MediaQuery.of(context).size.width/10,),
                     ),
-                    Padding(
-                      padding: EdgeInsets.all(MediaQuery.of(context).size.width/100),
-                      child: Row(children: [
-                        const Expanded(flex: 4,child:Text('Turn on Notifications? ' , style: TextStyle(color: textColor),)),
-                        Expanded(child: Checkbox(
-                              value: isChecked,
-                              onChanged: (bool? value) {
-                                setState(() {
-                                  isChecked = value!;
-                                });
-                              },
-                            checkColor: Colors.blueAccent,
-                            fillColor: MaterialStateProperty.resolveWith(getColor),
-                          ),flex: 1,)
-                      ],),
-                    )
+                    //todo: Uncomment notifications check box
+                    // Padding(
+                    //   padding: EdgeInsets.all(MediaQuery.of(context).size.width/100),
+                    //   child: Row(children: [
+                    //     const Expanded(flex: 4,child:Text('Turn on Notifications? ' , style: TextStyle(color: textColor),)),
+                    //     Expanded(child: Checkbox(
+                    //           value: isChecked,
+                    //           onChanged: (bool? value) {
+                    //             setState(() {
+                    //               isChecked = value!;
+                    //             });
+                    //           },
+                    //         checkColor: Colors.blueAccent,
+                    //         fillColor: MaterialStateProperty.resolveWith(getColor),
+                    //       ),flex: 1,)
+                    //   ],),
+                    // )
                   ],
                 ),
               ),
@@ -119,7 +120,7 @@ class _FavouriteStoresState extends State<FavouriteStores> {
                       itemCount: favourites.length,
                     );
                   }else{
-                    return const Center(child: CircularProgressIndicator(),);
+                    return const Center(child: Text('They are currently no saved stores'),);
                   }//end if-else
                 },
                 future: FavouriteStoresListing.getFavouriteStores(),
