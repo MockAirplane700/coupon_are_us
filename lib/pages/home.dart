@@ -38,10 +38,7 @@ class _HomeState extends State<Home> {
         actions: [
           IconButton(
               onPressed: () {
-
                 showSearch(context: context, delegate: MySearchDelegate());
-                ListingOfCoupons.reset();
-                StoreListing.reset();
               },
               icon: const Icon(Icons.search)
           )
