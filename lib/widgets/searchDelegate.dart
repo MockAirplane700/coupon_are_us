@@ -8,7 +8,7 @@ import 'package:flutter/material.dart';
 
 class MySearchDelegate extends SearchDelegate{
   int indexValue = 0;
-  final List<CouponsObject> _list =ListingOfCoupons.getCouponsIterationTwo() as List<CouponsObject>;
+  final List _list = ListingOfCoupons.fetchData();
 
   @override
   List<Widget>? buildActions(BuildContext context) => [
@@ -27,7 +27,7 @@ class MySearchDelegate extends SearchDelegate{
   );
 
   @override
-  Widget buildResults(BuildContext context) => ListTile(
+  Widget buildResults(BuildContext context) => _list.isNotEmpty ? ListTile(
     leading: Image.network(_list[indexValue].networkImage),
     title: Text(_list[indexValue].name),
     subtitle: Text('Store: ' + _list[indexValue].store.name),
@@ -35,11 +35,11 @@ class MySearchDelegate extends SearchDelegate{
       //go the view coupon page
       Navigator.push(context, MaterialPageRoute(builder: (context)=> ViewCoupon(couponsObject:_list[indexValue])));
     },
-  );
+  ) : ListTile(title: Center(child: Text('Could not find $query')),) ;
 
   @override
   Widget buildSuggestions(BuildContext context) {
-    List<CouponsObject> suggestions = _list.where((item) {
+    List suggestions = _list.where((item) {
       final itemNameComparison = item.name.toLowerCase();
       final itemStoreNameComparison = item.store.name.toLowerCase();
       final input = query.toLowerCase();

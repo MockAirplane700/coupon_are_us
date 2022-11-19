@@ -1,5 +1,8 @@
+import 'dart:convert';
+
 import 'package:coupon_are_us/customObjects/constants.dart';
 import 'package:mongo_dart/mongo_dart.dart';
+import 'package:http/http.dart' as http;
 
 class MongoDatabase {
   static DbCollection couponsCollection = DbCollection(Db('couponsAreUs'), 'coupons');
@@ -19,21 +22,26 @@ class MongoDatabase {
     storesCollection = databaseStores.collection('stores');
   }//end connect
 
-  static Future<List<Map<String,dynamic>>> getCoupons() async {
+  static Future<List> getCoupons() async {
+
     try {
-      final coupons = await couponsCollection.find().toList();
-      return coupons;
-    }catch (error) {
+      final response = await http.get(
+          Uri.parse('https://couponsareus.ca/coupons')
+      );
+      // final coupons = await couponsCollection.find().toList();
+      return jsonDecode(response.body);
+    }catch (error){
       throw Exception(error.toString());
     } //end try catch
   }//end get coupons
 
-  static Future<List<Map<String,dynamic>>> getStores() async {
+  static dynamic getStores() async {
     try {
-      final stores = await storesCollection.find().toList();
-      return stores;
-    }catch (error) {
-      throw Exception(error.toString());
+      final stores = await http.get(
+          Uri.parse('https://couponsareus.ca/stores')
+      );
+      return jsonDecode(stores.body);
+    }catch (error) {throw Exception(error.toString());
     }//end try catch
   }//end get stores
 

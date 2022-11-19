@@ -10,8 +10,8 @@ import 'package:path/path.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await MongoDatabase.connect();
-  await MongoDatabase.connectStores();
+  // await MongoDatabase.connect();
+  // await MongoDatabase.connectStores();
 
   //todo: set the search data appropriately
   // addSearchData(storesSearchFunction());

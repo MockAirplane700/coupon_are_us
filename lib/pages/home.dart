@@ -69,7 +69,7 @@ class _HomeState extends State<Home> {
                       child: FutureBuilder(
                           builder: (context, snapshot) {
                             if (snapshot.hasData) {
-                              List _stores = snapshot.data as List<Map<String,dynamic>>;
+                              List _stores = snapshot.data as List<dynamic>;
                               // check to see if populated
                               if (_stores.isEmpty) {
                                 return const Center(child: Text('No stores present currently'),);
@@ -137,10 +137,10 @@ class _HomeState extends State<Home> {
                     child: FutureBuilder(
                         builder: (context, snapshot) {
                           if (snapshot.hasData) {
-                            List _coupons = snapshot.data as List<Map<String,dynamic>>;
-
+                            List _coupons = snapshot.data as List;
+                            // add to coupons list
+                            ListingOfCoupons.reset();
                             if (_coupons.isNotEmpty) {
-                              ListingOfCoupons.reset();
                               return ListView.builder(
                                 itemBuilder: (context, index) {
                                   CouponsObject coupon = CouponsObject(

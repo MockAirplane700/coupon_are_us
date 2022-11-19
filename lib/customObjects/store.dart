@@ -18,7 +18,8 @@ class Store {
 
   Store fromJson(json) {
     return Store(
-        storeId: int.parse(json['storeId']) ,
+      //todo: do a null check for store id
+        storeId: int.parse(json['storeId'] ?? '0' )  ,
         name:json['name'] ,
         location: json['location'],
         networkImage: json['networkImage'],
