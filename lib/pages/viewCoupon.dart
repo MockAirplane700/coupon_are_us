@@ -35,8 +35,9 @@ class _ViewCouponState extends State<ViewCoupon> {
     barcodeValue = widget.couponsObject.store.website;
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Coupon View'),
+        title: const Text('Coupon View', style: TextStyle(color: textColor),),
         backgroundColor: primaryAppBarColor,
+        iconTheme: const IconThemeData(color: primaryIconThemeDataColor),
         actions: [
           IconButton(
               onPressed: () {
@@ -59,9 +60,11 @@ class _ViewCouponState extends State<ViewCoupon> {
                 Image.network(widget.couponsObject.networkImage),
                 Padding(padding: EdgeInsets.zero, child: Row(
                   children: [
-                    Padding(
-                      padding:EdgeInsets.all(width/300),
-                      child: Text('Store name: ${widget.couponsObject.store.name}',  style: const TextStyle(fontSize: 18),),
+                    Expanded(
+                      child: Padding(
+                        padding:EdgeInsets.all(width/300),
+                        child: Text('Store name: ${widget.couponsObject.store.name}',  style: const TextStyle(fontSize: 18),),
+                      ),
                     ),
                   ],
                 ),),

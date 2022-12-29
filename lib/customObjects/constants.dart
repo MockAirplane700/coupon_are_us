@@ -5,15 +5,15 @@ import 'package:url_launcher/url_launcher.dart';
 
 // the primary color for the app bar
 
-const Color primaryAppBarColor = Colors.deepOrangeAccent;
+ const Color primaryAppBarColor = Color(0x00ffa500);
 
 // the primary color for any cards
 
-const Color primaryColorCards = Colors.deepOrangeAccent;
+const Color primaryColorCards = Color(0x000284a6);
 
 // the background color of the application
 
-const Color backgroundApplicationColor = Colors.deepOrange;
+const Color backgroundApplicationColor = Color(0x00ffa500);
 
 // the color of text in the app
 
@@ -35,7 +35,7 @@ const Color primaryIconThemeDataColor = Colors.black;
 const String assetPath = 'C:\\Users\\sizib\\StudioProjects\\coupon_are_us\\images\\logo.png';
 
 // the logo
-const String logoUrl = 'https://firebasestorage.googleapis.com/v0/b/coupons-are-us.appspot.com/o/couponsareus%20logo%202.png?alt=media&token=3a04512f-5f8d-4786-a1c7-c156a0dd2448';
+const String logoUrl = 'https://firebasestorage.googleapis.com/v0/b/coupons-are-us.appspot.com/o/3.jpg?alt=media&token=81d384c4-3b77-499b-99a1-5c35638ea4b4';
 
 // the color of the drawer header
 const Color drawerHeaderColor = Colors.white30;
@@ -44,7 +44,7 @@ const Color drawerHeaderColor = Colors.white30;
 const Color iconColor = Colors.orangeAccent;
 
 // the color of shadows
-const Color shadowColor = Colors.black;
+const Color shadowColor = Colors.deepOrange;
 
 // dialog box background color
 const Color dialogBoxBackgroundColor = Colors.orange;

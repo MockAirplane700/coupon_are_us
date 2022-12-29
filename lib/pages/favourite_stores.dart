@@ -34,7 +34,7 @@ class _FavouriteStoresState extends State<FavouriteStores> {
     }//end get color
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Favourite stores'),
+        title: const Text('Favourite stores' , style: TextStyle(color: textColor),),
         backgroundColor: primaryAppBarColor,
         elevation: 0,
         actions: [

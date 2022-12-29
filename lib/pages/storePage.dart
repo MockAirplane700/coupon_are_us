@@ -41,7 +41,8 @@ class _ViewStoreState extends State<ViewStore> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: primaryAppBarColor,
-        title: const Text('Store Front'),
+        title: const Text('Store Front', style: TextStyle(color: textColor),),
+        iconTheme: const IconThemeData(color: primaryIconThemeDataColor),
         actions: [
           IconButton(
               onPressed: () {
@@ -82,7 +83,7 @@ class _ViewStoreState extends State<ViewStore> {
                         });
                       },
                     backgroundColor: Colors.deepOrangeAccent,
-                    child: const Icon(Icons.save, color: Colors.yellow,),
+                    child: const Icon(Icons.save, color: Colors.black,),
                   ),
                 ],),
               ),

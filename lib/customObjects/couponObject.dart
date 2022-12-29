@@ -34,7 +34,7 @@ class CouponsObject {
 
     Map<String,dynamic> map = jsonDecode(string);
     return Store(
-        storeId: map['storeId'], description: map['description'], 
+        storeId: int.parse(map['storeId']), description: map['description'],
         facebook: map['facebook'], instagram: map['instagram'], location: map['location'], 
         name: map['name'], networkImage: map['networkImage'], twitter: map['twitter'], 
         contactNumber: map['contactNumber'], website: map['website']);

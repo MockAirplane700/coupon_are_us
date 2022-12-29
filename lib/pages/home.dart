@@ -33,8 +33,9 @@ class _HomeState extends State<Home> {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Coupons in the area'),
+        title: const Text('Coupons in the area', style: TextStyle(color: textColor),),
         backgroundColor: primaryAppBarColor,
+        iconTheme: const IconThemeData(color: primaryIconThemeDataColor),
         actions: [
           IconButton(
               onPressed: () {
@@ -54,7 +55,7 @@ class _HomeState extends State<Home> {
                 Row(
                   children: [
                     Padding(
-                      padding: EdgeInsets.all(height/80),
+                      padding: EdgeInsets.all(height/90),
                       child: Text('Stores', style: GoogleFonts.roboto(color: textColor, fontSize: 20),),
                     ),
                   ],
@@ -115,7 +116,7 @@ class _HomeState extends State<Home> {
                         future: StoreListing.getStores(),
                       ),
                       width: MediaQuery.of(context).size.width,
-                      height: MediaQuery.of(context).size.height/5,
+                      height: MediaQuery.of(context).size.height/6,
                     ),
                   ],
                 ),
@@ -170,7 +171,7 @@ class _HomeState extends State<Home> {
                                           children: [
                                             Padding(
                                               padding: EdgeInsets.all(MediaQuery.of(context).size.width/50),
-                                              child: SizedBox(height: height/5,child: Image.network(_coupon.networkImage, fit: BoxFit.fill,)),
+                                              child: SizedBox(height: height/5,child: Image.network(_coupon.networkImage, fit: BoxFit.cover,)),
                                             ),
                                             Row(
                                               children: [
@@ -182,9 +183,11 @@ class _HomeState extends State<Home> {
                                             ),
                                             Row(
                                               children: [
-                                                Padding(
-                                                  padding: EdgeInsets.all(width/300),
-                                                  child: Text('Store name: ${_coupon.store.name}', style: const TextStyle(color: textColor),),
+                                                Expanded(
+                                                  child: Padding(
+                                                    padding: EdgeInsets.all(width/300),
+                                                    child: Text('Store name: ${_coupon.store.name}', style: const TextStyle(color: textColor),),
+                                                  ),
                                                 ),
 
                                               ],
