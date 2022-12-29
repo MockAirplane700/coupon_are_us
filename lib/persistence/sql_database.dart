@@ -44,6 +44,7 @@ class DatabaseManager {
   }//end insert store
 
   static Future<List<Store>> getStores() async {
+    await openDb();
     final List<Map<String,dynamic>> maps = await _database.query('stores');
 
     return List.generate(maps.length, (index) {

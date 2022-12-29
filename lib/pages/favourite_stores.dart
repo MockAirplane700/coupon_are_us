@@ -52,7 +52,6 @@ class _FavouriteStoresState extends State<FavouriteStores> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            // todo: a block detailing permissions for notifications
             Expanded(
               child: SizedBox(
                 height: MediaQuery.of(context).size.height/4,

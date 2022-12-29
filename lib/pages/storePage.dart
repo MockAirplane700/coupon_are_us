@@ -82,7 +82,7 @@ class _ViewStoreState extends State<ViewStore> {
                           ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('The store $storeName has been added to favourites')));
                         });
                       },
-                    backgroundColor: Colors.deepOrangeAccent,
+                    backgroundColor: iconColor,
                     child: const Icon(Icons.save, color: Colors.black,),
                   ),
                 ],),

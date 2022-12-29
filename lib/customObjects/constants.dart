@@ -5,15 +5,15 @@ import 'package:url_launcher/url_launcher.dart';
 
 // the primary color for the app bar
 
- const Color primaryAppBarColor = Color(0x00ffa500);
+ const Color primaryAppBarColor = Color(0xffa0284a6);
 
 // the primary color for any cards
 
-const Color primaryColorCards = Color(0x000284a6);
+const Color primaryColorCards = Color(0xffaaffa500);
 
 // the background color of the application
 
-const Color backgroundApplicationColor = Color(0x00ffa500);
+const Color backgroundApplicationColor = Color(0xffa0284a6);
 
 // the color of text in the app
 
@@ -38,10 +38,10 @@ const String assetPath = 'C:\\Users\\sizib\\StudioProjects\\coupon_are_us\\image
 const String logoUrl = 'https://firebasestorage.googleapis.com/v0/b/coupons-are-us.appspot.com/o/3.jpg?alt=media&token=81d384c4-3b77-499b-99a1-5c35638ea4b4';
 
 // the color of the drawer header
-const Color drawerHeaderColor = Colors.white30;
+const Color drawerHeaderColor = Color(0xffaaffa500);
 
 // the color of icons
-const Color iconColor = Colors.orangeAccent;
+const Color iconColor = Color(0xffaaffa500);
 
 // the color of shadows
 const Color shadowColor = Colors.deepOrange;

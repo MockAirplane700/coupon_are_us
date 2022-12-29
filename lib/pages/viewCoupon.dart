@@ -93,7 +93,7 @@ class _ViewCouponState extends State<ViewCoupon> {
                 Padding(padding: EdgeInsets.all(MediaQuery.of(context).size.width/100), child: Card(
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(MediaQuery.of(context).size.width/30)),
                   elevation: 2,
-                  color: Colors.deepOrangeAccent,
+                  color: primaryColorCards,
                   child: Padding(padding: EdgeInsets.all(MediaQuery.of(context).size.width/30),
                     child: SizedBox(
                       height: MediaQuery.of(context).size.height/8,

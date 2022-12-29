@@ -42,6 +42,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
             decoration: const BoxDecoration(
               color: drawerHeaderColor,
             ),
+
               child: Padding(padding: EdgeInsets.all(MediaQuery.of(context).size.width/100),child: CircleAvatar(
                 radius: MediaQuery.of(context).size.width/4,
                 backgroundColor: drawerHeaderColor,
@@ -52,7 +53,6 @@ class _CustomDrawerState extends State<CustomDrawer> {
           ListTile(
             leading: const Icon(Icons.bookmark_outlined, color: iconColor,),
             title: const Text('Favourite stores', style: TextStyle(color: textColor),),
-            trailing: const Icon(Icons.arrow_forward_ios_rounded, color: iconColor,),
             onTap: () {
               //go to favourites page
               Navigator.push(context, MaterialPageRoute(builder: (context)=> const FavouriteStores()));
@@ -62,7 +62,6 @@ class _CustomDrawerState extends State<CustomDrawer> {
           ListTile(
             leading: const Icon(Icons.share, color: iconColor,),
             title: const Text('Share CouponsAreUs!', style: TextStyle(color: textColor),),
-            trailing: const Icon(Icons.arrow_forward_ios_rounded, color: iconColor,),
             onTap: () {
               //share the application
               Share.share(shareUrl);
@@ -72,7 +71,6 @@ class _CustomDrawerState extends State<CustomDrawer> {
           ListTile(
             leading: const Icon(Icons.contacts_rounded, color: iconColor,),
             title: const Text('Follow us on our socials!', style: TextStyle(color: textColor),),
-            trailing: const Icon(Icons.arrow_forward_ios_rounded, color: iconColor,),
             onTap: () {
               //open dialog to icon buttons to socials
               showDialog(context: context, builder: (context)=> AlertDialog(
@@ -96,7 +94,6 @@ class _CustomDrawerState extends State<CustomDrawer> {
           ListTile(
             leading: const Icon(Icons.rate_review_outlined, color: iconColor,),
             title: const Text('Rate CouponsAreUs', style: TextStyle(color: textColor),),
-            trailing: const Icon(Icons.arrow_forward_ios_rounded, color: iconColor,),
             onTap: () {
               //go to ratings page on store
               showDialog(context: context, builder: (context)=> AlertDialog(
@@ -121,7 +118,6 @@ class _CustomDrawerState extends State<CustomDrawer> {
           ListTile(
             leading: const Icon(Icons.bug_report_rounded, color: iconColor,),
             title: const Text('Report a bug', style: TextStyle(color: textColor),),
-            trailing: const Icon(Icons.arrow_forward_ios_rounded, color: iconColor,),
             onTap: () {
               //send email report
               launchEmailIntent('sizibamthandazo@yahoo.com', 'COUPONS ARE US BUG REPORT');
@@ -131,7 +127,6 @@ class _CustomDrawerState extends State<CustomDrawer> {
           ListTile(
             leading: const Icon(Icons.email, color: iconColor,),
             title: const Text('Contact us', style: TextStyle(color: textColor),),
-            trailing: const Icon(Icons.arrow_forward_ios_rounded, color: iconColor,),
             onTap: () {
               //Email intent
               launchEmailIntent('sizibamthandzo@yahoo.com', 'COUPONS ARE US CUSTOMER REACHING OUT');
@@ -148,7 +143,8 @@ class _CustomDrawerState extends State<CustomDrawer> {
           //   },
           // )
         ],
-    )
+    ),
+
     );
   }
 }
