@@ -63,6 +63,7 @@ class MySearchDelegate extends SearchDelegate{
               subtitle: Text('Store: ' + suggestions[index].store.name),
               onTap: () {
                 query = suggestions[index].name;
+                indexValue = index;
                 showResults(context);
               },
             );

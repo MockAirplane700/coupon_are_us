@@ -61,7 +61,7 @@ class _FavouriteStoresState extends State<FavouriteStores> {
                     CircleAvatar(
                       radius: MediaQuery.of(context).size.width/10,
                       backgroundColor: backgroundApplicationColor,
-                      child:  Icon(Icons.person, size: MediaQuery.of(context).size.width/10,),
+                      child:  Icon(Icons.person, size: MediaQuery.of(context).size.width/10,color: iconColor,),
                     ),
                     //todo: Uncomment notifications check box
                     // Padding(
@@ -109,7 +109,7 @@ class _FavouriteStoresState extends State<FavouriteStores> {
                                   );
                                 });
                               },
-                              icon: const Icon(Icons.delete)
+                              icon: const Icon(Icons.delete, color: Colors.red,)
                           ),
                           onTap: () {
                             Navigator.push(context, MaterialPageRoute(builder: (context)=>  ViewStore(store: favourites[index],)));
