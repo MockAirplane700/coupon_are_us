@@ -144,7 +144,7 @@ class _HomeState extends State<Home> {
                                 itemBuilder: (context, index) {
                                   CouponsObject coupon = CouponsObject(
                                       networkImage: '', name: '', coordinates: '',
-                                      store: Store(
+                                      storeId: Store(
                                           storeId: 0, description: '',
                                           facebook: '', instagram: '',
                                           location: '', name: '', networkImage: '',
@@ -186,7 +186,7 @@ class _HomeState extends State<Home> {
                                                 Expanded(
                                                   child: Padding(
                                                     padding: EdgeInsets.all(width/300),
-                                                    child: Text('Store name: ${_coupon.store.name}', style: const TextStyle(color: textColor),),
+                                                    child: Text('Store name: ${_coupon.storeId.name}', style: const TextStyle(color: textColor),),
                                                   ),
                                                 ),
 

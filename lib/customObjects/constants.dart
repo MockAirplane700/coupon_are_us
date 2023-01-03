@@ -50,7 +50,7 @@ const Color shadowColor = Colors.deepOrange;
 const Color dialogBoxBackgroundColor = Colors.orange;
 
 // Circle avatar background color
-const Color circleAvatarBackgroundColor = Colors.deepOrangeAccent;
+const Color circleAvatarBackgroundColor = Color(0xffaaffa500);
 
 ///*****************************************************************************
 ///

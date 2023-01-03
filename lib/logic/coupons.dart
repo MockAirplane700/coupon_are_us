@@ -20,7 +20,7 @@ class ListingOfCoupons {
     for (var value in list) {
       CouponsObject couponsObject = CouponsObject(
           networkImage: value.networkImage, name: value.name,
-          coordinates: value.coordinates, store: value.store);
+          coordinates: value.coordinates, storeId: value.storeId);
       results.add(couponsObject);
     }
     _listing.addAll(results);

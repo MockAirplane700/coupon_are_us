@@ -7,11 +7,11 @@ import 'package:tuple/tuple.dart';
 class CouponsObject {
   final String name;
   final String networkImage;
-  final Store store;
+  final Store storeId;
   final String coordinates;
 
 
-  CouponsObject({required this.networkImage, required this.name, required this.coordinates, required this.store});
+  CouponsObject({required this.networkImage, required this.name, required this.coordinates, required this.storeId});
 
   ///-----------------------------------------------------------------
 ///
@@ -25,18 +25,18 @@ class CouponsObject {
         facebook: '', instagram: '', location: '', 
         name: name, networkImage: networkImage, twitter: '', 
         contactNumber: '', website: '');
-    return CouponsObject( name: json['name'],networkImage: json['networkImage'], store: getObject(json['store']), coordinates: json['coordinates']);
+    return CouponsObject( name: json['name'],networkImage: json['networkImage'], storeId: getObject(json['storeId'] ) , coordinates: json['coordinates']);
 
   }//end from json
 
-  Store getObject(String string) {
+  Store getObject( Map<dynamic, dynamic> map) {
     // string processing to json
 
-    Map<String,dynamic> map = jsonDecode(string);
+    // Map<String,dynamic> map = jsonDecode(string);
     return Store(
-        storeId: int.parse(map['storeId']), description: map['description'],
-        facebook: map['facebook'], instagram: map['instagram'], location: map['location'], 
-        name: map['name'], networkImage: map['networkImage'], twitter: map['twitter'], 
+        storeId: int.parse(map['storeId']?? '0'), description: map['description'],
+        facebook: map['facebook'], instagram: map['instagram'], location: map['location'],
+        name: map['name'], networkImage: map['networkImage'], twitter: map['twitter'],
         contactNumber: map['contactNumber'], website: map['website']);
   }//end get object
 
@@ -44,7 +44,7 @@ class CouponsObject {
     return {
       'name':name,
       'networkImage': networkImage,
-      'store':store,
+      'store':storeId,
       'coordinates':coordinates
     };
   }

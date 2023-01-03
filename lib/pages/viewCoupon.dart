@@ -32,7 +32,7 @@ class _ViewCouponState extends State<ViewCoupon> {
   Widget build(BuildContext context) {
     width = MediaQuery.of(context).size.width;
     height = MediaQuery.of(context).size.height;
-    barcodeValue = widget.couponsObject.store.website;
+    barcodeValue = widget.couponsObject.storeId.website;
     return Scaffold(
       appBar: AppBar(
         title: const Text('Coupon View', style: TextStyle(color: textColor),),
@@ -63,7 +63,7 @@ class _ViewCouponState extends State<ViewCoupon> {
                     Expanded(
                       child: Padding(
                         padding:EdgeInsets.all(width/300),
-                        child: Text('Store name: ${widget.couponsObject.store.name}',  style: const TextStyle(fontSize: 18),),
+                        child: Text('Store name: ${widget.couponsObject.storeId.name}',  style: const TextStyle(fontSize: 18),),
                       ),
                     ),
                   ],
@@ -73,7 +73,7 @@ class _ViewCouponState extends State<ViewCoupon> {
                     Expanded(
                       child: Padding(
                         padding:  EdgeInsets.all(width/300),
-                        child: Text('Store location: ${widget.couponsObject.store.location}' , style: const TextStyle(fontSize: 18),),
+                        child: Text('Store location: ${widget.couponsObject.storeId.location}' , style: const TextStyle(fontSize: 18),),
                       ),
                     ),
                   ],

@@ -30,7 +30,7 @@ class MySearchDelegate extends SearchDelegate{
   Widget buildResults(BuildContext context) => _list.isNotEmpty ? ListTile(
     leading: Image.network(_list[indexValue].networkImage),
     title: Text(_list[indexValue].name),
-    subtitle: Text('Store: ' + _list[indexValue].store.name),
+    subtitle: Text('Store: ' + _list[indexValue].storeId.name),
     onTap: () {
       //go the view coupon page
       Navigator.push(context, MaterialPageRoute(builder: (context)=> ViewCoupon(couponsObject:_list[indexValue])));
@@ -41,7 +41,7 @@ class MySearchDelegate extends SearchDelegate{
   Widget buildSuggestions(BuildContext context) {
     List suggestions = _list.where((item) {
       final itemNameComparison = item.name.toLowerCase();
-      final itemStoreNameComparison = item.store.name.toLowerCase();
+      final itemStoreNameComparison = item.storeId.name.toLowerCase();
       final input = query.toLowerCase();
       return itemStoreNameComparison.contains(input) || itemNameComparison.contains(input);
     }).toList();
@@ -60,7 +60,7 @@ class MySearchDelegate extends SearchDelegate{
             return ListTile(
               leading: Image.network(suggestions[index].networkImage),
               title: Text(suggestions[index].name),
-              subtitle: Text('Store: ' + suggestions[index].store.name),
+              subtitle: Text('Store: ' + suggestions[index].storeId.name),
               onTap: () {
                 query = suggestions[index].name;
                 indexValue = index;

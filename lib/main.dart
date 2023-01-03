@@ -75,7 +75,7 @@ List<CouponsObject> couponsSearchFunction() {
         for (var value in _coupons) {
           CouponsObject coupon = CouponsObject(
               networkImage: '', name: '', coordinates: '',
-              store: Store(
+              storeId: Store(
                   storeId: 0, description: '',
                   facebook: '', instagram: '',
                   location: '', name: '', networkImage: '',
