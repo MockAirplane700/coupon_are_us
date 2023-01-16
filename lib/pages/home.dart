@@ -48,174 +48,168 @@ class _HomeState extends State<Home> {
       drawer: const CustomDrawer(),
       backgroundColor: backgroundApplicationColor,
       body: SafeArea(
-        child: SingleChildScrollView(
-          child: Center(
-            child: Column(
-              children: [
-                Row(
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.all(height/90),
-                      child: Text('Stores', style: GoogleFonts.roboto(color: textColor, fontSize: 20),),
-                    ),
-                  ],
-                ),
-                const Divider(),
-                //First list view that shows the stores
-                Row(
-                  children: [
-                    SizedBox(
-                      child: FutureBuilder(
-                          builder: (context, snapshot) {
-                            if (snapshot.hasData) {
-                              List _stores = snapshot.data as List<dynamic>;
-                              // check to see if populated
-                              if (_stores.isEmpty) {
-                                return const Center(child: Text('No stores present currently'),);
-                              }else{
-                                StoreListing.reset();
-                                return ListView.builder(
-                                  scrollDirection: Axis.horizontal,
-                                  itemBuilder: (context, index) {
-                                    Store store = Store(
-                                        storeId: 0, description: '',
-                                        facebook: '', instagram: '',
-                                        location: '', name: '', networkImage: '',
-                                        twitter: '', contactNumber: '',
-                                        website: '');
-                                    Store _store = store.fromJson(_stores[index]);
-                                    // todo: add to search list
-                                    StoreListing.addToSearch(_store);
-                                    return InkWell(
-                                      onTap: () {
-                                        //go to the store page
-                                        Navigator.push(context,
-                                            MaterialPageRoute(builder: (context)=> ViewStore(store: _store,))
-                                        );
-                                      },
-                                      child: Padding(
-                                        padding: EdgeInsets.all(MediaQuery.of(context).size.width/50),
-                                        child: Padding(
-                                          padding: EdgeInsets.all(width/500),
-                                          child: CircleAvatar(
-                                            backgroundColor: circleAvatarBackgroundColor,
-                                            backgroundImage: NetworkImage(_store.networkImage,),
-                                            radius: MediaQuery.of(context).size.width/7,
-                                          ),
-                                        ),
-                                      ),
-                                    );
-                                  },
-                                  itemCount: _stores.length,
-                                );
-                              }//end if else
-                            }else{
-                              return const Center(child: CircularProgressIndicator(),);
-                            }//end if-else
-                          },
-                        future: StoreListing.getStores(),
-                      ),
-                      width: MediaQuery.of(context).size.width,
-                      height: MediaQuery.of(context).size.height/6,
-                    ),
-                  ],
-                ),
-                //Second list view that shows the coupons
-                Row(
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.all(height/80),
-                      child: Text('Coupons', style: GoogleFonts.roboto(color: textColor, fontSize: 20),),
-                    ),
-                  ],
-                ),
-                const Divider(),
-                Padding(
-                  padding:EdgeInsets.all(MediaQuery.of(context).size.width/50),
-                  child: SizedBox(
+        child: Column(
+          children: [
+
+            //First list view that shows the stores
+            Expanded(
+              flex: 2,
+              child: Row(
+                children: [
+                  SizedBox(
                     child: FutureBuilder(
                         builder: (context, snapshot) {
                           if (snapshot.hasData) {
-                            List _coupons = snapshot.data as List;
-                            // add to coupons list
-                            ListingOfCoupons.reset();
-                            if (_coupons.isNotEmpty) {
+                            List _stores = snapshot.data as List<dynamic>;
+                            // check to see if populated
+                            if (_stores.isEmpty) {
+                              return const Center(child: Text('No stores present currently'),);
+                            }else{
+                              StoreListing.reset();
                               return ListView.builder(
+                                scrollDirection: Axis.horizontal,
                                 itemBuilder: (context, index) {
-                                  CouponsObject coupon = CouponsObject(
-                                      networkImage: '', name: '', coordinates: '',
-                                      storeId: Store(
-                                          storeId: 0, description: '',
-                                          facebook: '', instagram: '',
-                                          location: '', name: '', networkImage: '',
-                                          twitter: '', contactNumber: '',
-                                          website: ''));
-                                  CouponsObject _coupon = coupon.fromJson(_coupons[index]);
+                                  Store store = Store(
+                                      storeId: 0, description: '',
+                                      facebook: '', instagram: '',
+                                      location: '', name: '', networkImage: '',
+                                      twitter: '', contactNumber: '',
+                                      website: '');
+                                  Store _store = store.fromJson(_stores[index]);
                                   // todo: add to search list
-                                  ListingOfCoupons.addToCouponsSearchList(_coupon);
+                                  StoreListing.addToSearch(_store);
                                   return InkWell(
                                     onTap: () {
-                                      //go to coupon
-                                      Navigator.push(context, MaterialPageRoute(builder: (context)=> ViewCoupon(
-                                          couponsObject: _coupon
-                                      )));
+                                      //go to the store page
+                                      Navigator.push(context,
+                                          MaterialPageRoute(builder: (context)=> ViewStore(store: _store,))
+                                      );
                                     },
-                                    child: Card(
-                                      shape:RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(MediaQuery.of(context).size.width/20))),
-                                      shadowColor: shadowColor,
-                                      color: primaryColorCards,
-                                      elevation: 10,
+                                    child: Padding(
+                                      padding: EdgeInsets.all(MediaQuery.of(context).size.width/50),
                                       child: Padding(
-                                        padding: EdgeInsets.all(MediaQuery.of(context).size.width/50),
-                                        child: Column(
-                                          children: [
-                                            Padding(
-                                              padding: EdgeInsets.all(MediaQuery.of(context).size.width/50),
-                                              child: SizedBox(height: height/5,child: Image.network(_coupon.networkImage, fit: BoxFit.cover,)),
-                                            ),
-                                            Row(
-                                              children: [
-                                                Padding(
-                                                  padding:  EdgeInsets.all(width/300),
-                                                  child: Text('Name: ${_coupon.name}', style: const TextStyle(color: textColor),),
-                                                ),
-                                              ],
-                                            ),
-                                            Row(
-                                              children: [
-                                                Expanded(
-                                                  child: Padding(
-                                                    padding: EdgeInsets.all(width/300),
-                                                    child: Text('Store name: ${_coupon.storeId.name}', style: const TextStyle(color: textColor),),
-                                                  ),
-                                                ),
-
-                                              ],
-                                            )
-                                          ],
+                                        padding: EdgeInsets.all(width/500),
+                                        child: CircleAvatar(
+                                          backgroundColor: circleAvatarBackgroundColor,
+                                          backgroundImage: NetworkImage(_store.networkImage,),
+                                          radius: MediaQuery.of(context).size.width/7,
                                         ),
                                       ),
                                     ),
                                   );
                                 },
-                                itemCount: _coupons.length,
+                                itemCount: _stores.length,
                               );
-                            }else{
-                              return const Center(child: Text('There are currently no coupons'),);
-                            }//end if-else
-                          }else {
+                            }//end if else
+                          }else{
                             return const Center(child: CircularProgressIndicator(),);
                           }//end if-else
                         },
-                      future: ListingOfCoupons.getCoupons(),
+                      future: StoreListing.getStores(),
                     ),
-                    height: MediaQuery.of(context).size.height/1.5,
                     width: MediaQuery.of(context).size.width,
+                    height: MediaQuery.of(context).size.height/6,
                   ),
+                ],
+              ),
+            ),
+            //Second list view that shows the coupons
+            Row(
+              children: [
+                Padding(
+                  padding: EdgeInsets.all(height/100),
+                  child: Text('Coupons', style: GoogleFonts.roboto(color: textColor, fontSize: 20),),
                 ),
               ],
-            )
-          ),
+            ),
+            const Divider(),
+            Expanded(
+              flex: 4,
+              child: Padding(
+                padding:EdgeInsets.all(MediaQuery.of(context).size.width/50),
+                child: SizedBox(
+                  child: FutureBuilder(
+                      builder: (context, snapshot) {
+                        if (snapshot.hasData) {
+                          List _coupons = snapshot.data as List;
+                          // add to coupons list
+                          ListingOfCoupons.reset();
+                          if (_coupons.isNotEmpty) {
+                            return ListView.builder(
+                              itemBuilder: (context, index) {
+                                CouponsObject coupon = CouponsObject(
+                                    networkImage: '', name: '', coordinates: '',
+                                    storeId: Store(
+                                        storeId: 0, description: '',
+                                        facebook: '', instagram: '',
+                                        location: '', name: '', networkImage: '',
+                                        twitter: '', contactNumber: '',
+                                        website: ''));
+                                CouponsObject _coupon = coupon.fromJson(_coupons[index]);
+                                // todo: add to search list
+                                ListingOfCoupons.addToCouponsSearchList(_coupon);
+                                return InkWell(
+                                  onTap: () {
+                                    //go to coupon
+                                    Navigator.push(context, MaterialPageRoute(builder: (context)=> ViewCoupon(
+                                        couponsObject: _coupon
+                                    )));
+                                  },
+                                  child: Card(
+                                    shape:RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(MediaQuery.of(context).size.width/20))),
+                                    shadowColor: shadowColor,
+                                    color: primaryColorCards,
+                                    elevation: 10,
+                                    child: Padding(
+                                      padding: EdgeInsets.all(MediaQuery.of(context).size.width/50),
+                                      child: Column(
+                                        children: [
+                                          Padding(
+                                            padding: EdgeInsets.all(MediaQuery.of(context).size.width/50),
+                                            child: SizedBox(height: height/5,child: Image.network(_coupon.networkImage, fit: BoxFit.cover,)),
+                                          ),
+                                          Row(
+                                            children: [
+                                              Padding(
+                                                padding:  EdgeInsets.all(width/300),
+                                                child: Text(_coupon.name, style: const TextStyle(color: textColor, fontSize: 20, fontWeight: FontWeight.bold),),
+                                              ),
+                                            ],
+                                          ),
+                                          Row(
+                                            children: [
+                                              Expanded(
+                                                child: Padding(
+                                                  padding: EdgeInsets.all(width/300),
+                                                  child: Text(_coupon.storeId.name, style: const TextStyle(color: textColor, fontSize: 15, fontStyle: FontStyle.italic),),
+                                                ),
+                                              ),
+
+                                            ],
+                                          )
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                );
+                              },
+                              itemCount: _coupons.length,
+                            );
+                          }else{
+                            return const Center(child: Text('There are currently no coupons'),);
+                          }//end if-else
+                        }else {
+                          return const Center(child: CircularProgressIndicator(),);
+                        }//end if-else
+                      },
+                    future: ListingOfCoupons.getCoupons(),
+                  ),
+                  height: MediaQuery.of(context).size.height/1.5,
+                  width: MediaQuery.of(context).size.width,
+                ),
+              ),
+            ),
+          ],
         ),
       ),
     );

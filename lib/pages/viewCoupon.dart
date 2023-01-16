@@ -58,52 +58,66 @@ class _ViewCouponState extends State<ViewCoupon> {
               
               children: [
                 Image.network(widget.couponsObject.networkImage),
-                Padding(padding: EdgeInsets.zero, child: Row(
-                  children: [
-                    Expanded(
-                      child: Padding(
-                        padding:EdgeInsets.all(width/300),
-                        child: Text('Store name: ${widget.couponsObject.storeId.name}',  style: const TextStyle(fontSize: 18),),
-                      ),
-                    ),
-                  ],
-                ),),
-                Padding(padding: EdgeInsets.zero, child: Row(
-                  children: [
-                    Expanded(
-                      child: Padding(
-                        padding:  EdgeInsets.all(width/300),
-                        child: Text('Store location: ${widget.couponsObject.storeId.location}' , style: const TextStyle(fontSize: 18),),
-                      ),
-                    ),
-                  ],
-                ),),
-                Flexible(
-                  flex: 1,
-                  child: SizedBox(
-                    width: width,
-                    child: Row(
+                Card(
+                  color: primaryColorCards,
+                  shadowColor: shadowColor,
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(height/80)),
+                  child: Padding(
+                    padding:  EdgeInsets.all(height/90),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
                       children: [
-                        Expanded(child: Text('Coupon name: ${widget.couponsObject.name}' , style: const TextStyle(fontSize: 18),)),
+                        Padding(padding: EdgeInsets.zero, child: Row(
+                          children: [
+                            Expanded(
+                              child: Padding(
+                                padding:EdgeInsets.all(width/300),
+                                child: Text(widget.couponsObject.storeId.name,  style: const TextStyle(fontSize: 18),),
+                              ),
+                            ),
+                          ],
+                        ),),
+                        Padding(padding: EdgeInsets.zero, child: Row(
+                          children: [
+                            Expanded(
+                              child: Padding(
+                                padding:  EdgeInsets.all(width/300),
+                                child: Text(widget.couponsObject.storeId.location , style: const TextStyle(fontSize: 18),),
+                              ),
+                            ),
+                          ],
+                        ),),
+                        Flexible(
+                          flex: 1,
+                          fit:  FlexFit.loose,
+                          child: SizedBox(
+                            width: width,
+                            child: Row(
+                              children: [
+                                Expanded(child: Text(widget.couponsObject.name , style: const TextStyle(fontSize: 18),)),
+                              ],
+                            ),
+                          ),
+                        ),
+                        const Divider(),
+                        Padding(padding: EdgeInsets.all(MediaQuery.of(context).size.width/100), child: Card(
+                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(MediaQuery.of(context).size.width/30)),
+                          elevation: 2,
+                          color: primaryColorCards,
+                          child: Padding(padding: EdgeInsets.all(MediaQuery.of(context).size.width/30),
+                            child: SizedBox(
+                              height: MediaQuery.of(context).size.height/8,
+                              child: SfBarcodeGenerator(
+                                value: barcodeValue.isNotEmpty ? barcodeValue :'https://www.sizibamthandazo.dev' ,
+                                showValue: false,
+                                symbology: Code39Extended(module: 2),
+                              ),
+                            ),),
+                        ),),
                       ],
                     ),
                   ),
-                ),
-                const Divider(),
-                Padding(padding: EdgeInsets.all(MediaQuery.of(context).size.width/100), child: Card(
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(MediaQuery.of(context).size.width/30)),
-                  elevation: 2,
-                  color: primaryColorCards,
-                  child: Padding(padding: EdgeInsets.all(MediaQuery.of(context).size.width/30),
-                    child: SizedBox(
-                      height: MediaQuery.of(context).size.height/8,
-                      child: SfBarcodeGenerator(
-                        value: barcodeValue.isNotEmpty ? barcodeValue :'https://www.sizibamthandazo.dev' ,
-                        showValue: false,
-                        symbology: Code39Extended(module: 2),
-                      ),
-                    ),),
-                ),),
+                )
               ],
             ),),
         ),

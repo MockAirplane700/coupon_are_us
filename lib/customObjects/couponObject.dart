@@ -29,12 +29,13 @@ class CouponsObject {
 
   }//end from json
 
-  Store getObject( Map<dynamic, dynamic> map) {
+  static Store getObject( String string) {
     // string processing to json
 
-    // Map<String,dynamic> map = jsonDecode(string);
+    Map<String,dynamic> map = jsonDecode(string);
+
     return Store(
-        storeId: int.parse(map['storeId']?? '0'), description: map['description'],
+        storeId: int.parse('0'), description: map['description'],
         facebook: map['facebook'], instagram: map['instagram'], location: map['location'],
         name: map['name'], networkImage: map['networkImage'], twitter: map['twitter'],
         contactNumber: map['contactNumber'], website: map['website']);
