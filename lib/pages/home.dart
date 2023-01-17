@@ -3,6 +3,7 @@ import 'package:coupon_are_us/customObjects/couponObject.dart';
 import 'package:coupon_are_us/customObjects/store.dart';
 import 'package:coupon_are_us/logic/coupons.dart';
 import 'package:coupon_are_us/logic/stores.dart';
+import 'package:coupon_are_us/pages/favourite_stores.dart';
 import 'package:coupon_are_us/pages/storePage.dart';
 import 'package:coupon_are_us/pages/viewCoupon.dart';
 import 'package:coupon_are_us/widgets/custom_drawer.dart';
@@ -47,6 +48,12 @@ class _HomeState extends State<Home> {
       ),
       drawer: const CustomDrawer(),
       backgroundColor: backgroundApplicationColor,
+      floatingActionButton: FloatingActionButton(
+        onPressed: (){
+          Navigator.push(context, MaterialPageRoute(builder: (context)=> const FavouriteStores()));
+        },
+        backgroundColor: primaryColorCards,
+        child: const Icon(Icons.bookmark, color: iconColor,),),
       body: SafeArea(
         child: Column(
           children: [

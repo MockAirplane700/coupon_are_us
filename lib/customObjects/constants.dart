@@ -13,7 +13,7 @@ const Color primaryColorCards = Colors.white;
 
 // the background color of the application
 
-const Color backgroundApplicationColor = Colors.white;
+const Color backgroundApplicationColor = Colors.grey;
 
 // the color of text in the app
 

@@ -49,15 +49,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
                 child: Padding(padding: EdgeInsets.all( MediaQuery.of(context).size.width/50), child: Image.network(logoUrl)),),
                 // backgroundImage: NetworkImage(logoUrl, scale: MediaQuery.of(context).size.width),
               ),),
-          // Favourite stores
-          ListTile(
-            leading: const Icon(Icons.bookmark_outlined, color: iconColor,),
-            title: const Text('Favourite stores', style: TextStyle(color: textColor),),
-            onTap: () {
-              //go to favourites page
-              Navigator.push(context, MaterialPageRoute(builder: (context)=> const FavouriteStores()));
-            },
-          ),
+
           // Share the application
           ListTile(
             leading: const Icon(Icons.share, color: iconColor,),

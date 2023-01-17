@@ -61,6 +61,7 @@ class _ViewCouponState extends State<ViewCoupon> {
                 Card(
                   color: primaryColorCards,
                   shadowColor: shadowColor,
+                  elevation: 8,
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(height/80)),
                   child: Padding(
                     padding:  EdgeInsets.all(height/90),
@@ -72,7 +73,7 @@ class _ViewCouponState extends State<ViewCoupon> {
                             Expanded(
                               child: Padding(
                                 padding:EdgeInsets.all(width/300),
-                                child: Text(widget.couponsObject.storeId.name,  style: const TextStyle(fontSize: 18),),
+                                child: Text(widget.couponsObject.storeId.name,  style: const TextStyle(fontSize: 20),),
                               ),
                             ),
                           ],
@@ -81,8 +82,8 @@ class _ViewCouponState extends State<ViewCoupon> {
                           children: [
                             Expanded(
                               child: Padding(
-                                padding:  EdgeInsets.all(width/300),
-                                child: Text(widget.couponsObject.storeId.location , style: const TextStyle(fontSize: 18),),
+                                padding:  EdgeInsets.all(width/200),
+                                child: Text(widget.couponsObject.storeId.location , style: const TextStyle(fontSize: 18, fontStyle: FontStyle.italic),),
                               ),
                             ),
                           ],
@@ -93,8 +94,9 @@ class _ViewCouponState extends State<ViewCoupon> {
                           child: SizedBox(
                             width: width,
                             child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                Expanded(child: Text(widget.couponsObject.name , style: const TextStyle(fontSize: 18),)),
+                                Text(widget.couponsObject.name , style: const TextStyle(fontSize: 28, fontWeight: FontWeight.bold),),
                               ],
                             ),
                           ),
